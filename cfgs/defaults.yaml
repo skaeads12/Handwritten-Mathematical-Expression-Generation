@@ -1,5 +1,5 @@
-use_ddp: True
-port: 1234
+use_ddp: False
+port: 
 
 batch_size: 8
 

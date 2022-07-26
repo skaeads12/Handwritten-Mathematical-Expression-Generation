@@ -121,7 +121,7 @@ def train(args, cfg, ddp_gpu=-1):
     total_labels = json.load(open("data/labels.json", 'r'))
     total_set = []
 
-    for label in total_labels.values():
+    for label in total_labels:
 
         has_matrix = False
         if "matrix" in label:
@@ -207,21 +207,21 @@ def train(args, cfg, ddp_gpu=-1):
     ac_optim = optim.Adam(aux_clf.parameters(), lr=cfg.ac_lr, betas=cfg.adam_betas)
 
     # use pretrained model
-    weight = torch.load("result/checkpoints/last.pth")
-    if "generator_ema" in weight:
-        gen.load_state_dict(weight["generator_ema"])
-        g_optim.load_state_dict(weight["optimizer"])
-        print("generator loaded.")
+    # weight = torch.load("result/checkpoints/last.pth")
+    # if "generator_ema" in weight:
+    #     gen.load_state_dict(weight["generator_ema"])
+    #     g_optim.load_state_dict(weight["optimizer"])
+    #     print("generator loaded.")
     
-    if "discriminator" in weight:
-        disc.load_state_dict(weight["discriminator"])
-        d_optim.load_state_dict(weight["d_optimizer"])
-        print("discriminator loaded.")
+    # if "discriminator" in weight:
+    #     disc.load_state_dict(weight["discriminator"])
+    #     d_optim.load_state_dict(weight["d_optimizer"])
+    #     print("discriminator loaded.")
     
-    if "aux_clf" in weight:
-        aux_clf.load_state_dict(weight["aux_clf"])
-        ac_optim.load_state_dict(weight["ac_optimizer"])
-        print("aux clf loaded.")
+    # if "aux_clf" in weight:
+    #     aux_clf.load_state_dict(weight["aux_clf"])
+    #     ac_optim.load_state_dict(weight["ac_optimizer"])
+    #     print("aux clf loaded.")
 
     st_step = 0
     if cfg.resume:
