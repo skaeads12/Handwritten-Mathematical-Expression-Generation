@@ -45,6 +45,7 @@ python eval.py cfgs/eval.yaml --weight result/checkpoints/last.pth --result_dir 
 
 ### 예시
 > 위: 원본 이미지(data/data_png_Printed/*.png), 아래: 생성 이미지
+> 더 많은 검증 결과는 val_result/에서 확인할 수 있습니다.
 >  
 __완벽__  
 <img src="https://i.esdrop.com/d/t/yeKdNoYiiU/yKQGltEZIT.jpg" width="200" height="300">
@@ -59,3 +60,7 @@ __아쉬움__
 __부족__  
 <img src="https://i.esdrop.com/d/t/yeKdNoYiiU/Gq0d2lXpxw.jpg" width="200" height="300">
 <img src="https://i.esdrop.com/d/t/yeKdNoYiiU/6nHZdSN18X.jpg" width="200" height="300">
+
+# 학습 모델
+
+TODO: Write this
